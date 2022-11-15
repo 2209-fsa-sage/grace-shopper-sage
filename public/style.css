@@ -1,0 +1,16 @@
+.productCardGrid{
+    display: flex;
+    /* padding: 2rem; */
+    justify-content: space-around;
+}
+.cart-item-list{
+}
+.cart-item{
+    padding: 1rem;
+    gap: 1rem;
+}
+.cart-item-image{
+    background: rgb(139, 139, 139);
+    width: 100px;
+    height: 100px;
+}
