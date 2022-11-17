@@ -64,6 +64,9 @@ export const makeUserOrder = (order, id) => {
       {
         newCart,
         newOrder,
+      },
+      {
+        headers: {}
       }
     );
     dispatch(_getCart(newCart));
