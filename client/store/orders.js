@@ -58,19 +58,9 @@ export const makeUserOrder = (order, id) => {
         authorization: token,
       },
     });
-    console.log(newOrder, newCart);
     await axios.post(
       `https://hooks.zapier.com/hooks/catch/13910372/bpahw2a/`,
-      {
-        newCart,
-        newOrder,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Accept":"application/json"
-        },
-      }
+      newOrder
     );
     dispatch(_getCart(newCart));
   };
