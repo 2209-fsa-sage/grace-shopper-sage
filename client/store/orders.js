@@ -60,7 +60,7 @@ export const makeUserOrder = (order, id) => {
     });
     console.log(newOrder, newCart);
     await axios.post(
-      `https://hooks.zapier.com/hooks/catch/13910372/bpatiq1/`,
+      `https://hooks.zapier.com/hooks/catch/13910372/bpahw2a/`,
       {
         newCart,
         newOrder,
