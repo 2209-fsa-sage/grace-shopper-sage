@@ -44,16 +44,28 @@ export const makeGuestOrder = (order) => {
 export const makeUserOrder = (order, id) => {
   const token = window.localStorage.getItem("token");
   return async (dispatch) => {
-    const { data } = await axios.post(`/api/users/${id}/orders`, order, {
-      headers: {
-        authorization: token,
-      },
-    });
+    const { data: newOrder } = await axios.post(
+      `/api/users/${id}/orders`,
+      order,
+      {
+        headers: {
+          authorization: token,
+        },
+      }
+    );
     const { data: newCart } = await axios.get(`/api/users/${id}/cartItems`, {
       headers: {
         authorization: token,
       },
     });
+    console.log(newOrder, newCart);
+    await axios.post(
+      `https://hooks.zapier.com/hooks/catch/13910372/bpahw2a/silent`,
+      {
+        newCart,
+        newOrder,
+      }
+    );
     dispatch(_getCart(newCart));
   };
 };
