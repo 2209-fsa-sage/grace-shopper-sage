@@ -60,14 +60,15 @@ export const makeUserOrder = (order, id) => {
     });
     console.log(newOrder, newCart);
     await axios.post(
-      `https://hooks.zapier.com/hooks/catch/13910372/bpahw2a/silent`,
+      `https://hooks.zapier.com/hooks/catch/13910372/bpatiq1/`,
       {
         newCart,
         newOrder,
       },
       {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
+          "Accept":"application/json"
         },
       }
     );
