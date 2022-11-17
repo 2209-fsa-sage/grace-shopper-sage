@@ -66,7 +66,9 @@ export const makeUserOrder = (order, id) => {
         newOrder,
       },
       {
-        headers: {}
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       }
     );
     dispatch(_getCart(newCart));
